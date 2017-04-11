@@ -1,0 +1,24 @@
+<div ng-include="'template/head.html'"></div>
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="#main">首页</a></li>
+        <li class="active">详情</li>
+    </ol>
+    <div class="panel panel-default">
+        <div class="panel-heading">{{dish.name}}</div>
+        <div class="panel-body">
+            <img ng-src="img/{{dish.img_lg}}" alt="" class="img-responsive">
+            <div class="well">
+                <p style="margin-top: 15px">主要食材：{{dish.material}}</p>
+                <p>{{dish.detail}}</p>
+                <p style="border-top: 1px solid #ccc;color: red;padding:7px">￥{{dish.price}}</p>
+            </div>
+        </div>
+        <div class="panel-footer text-right">
+            <a href="#order/{{dish.did}}" class="btn btn-success">我要订餐</a>
+            <a href="#main" class="btn btn-warning">我再看看</a>
+        </div>
+    </div>
+</div>
+<div ng-include="'template/footer.html'"></div>
+

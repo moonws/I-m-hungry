@@ -1,0 +1,27 @@
+<div ng-include="'template/head.html'"></div>
+<div class="container">
+    <h4 class="text-center">我的订单</h4>
+    <div class="panel panel-default">
+        <table ng-show="hasOrder" class="table table-hover table-responsive text-center">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>菜品</th>
+                <th>下单时间</th>
+                <th>联系人</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="text-center" ng-repeat="order in orders">
+                <td>{{order.oid}}</td>
+                <td><img ng-src="img/{{order.img_sm}}" alt="" class="img-responsive"></td>
+                <td>{{order.order_time}}</td>
+                <td>{{order.user_name}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div ng-hide="hasOrder" class="alert alert-danger text-center">您还没有订餐，请您先确认下单！</div>
+</div>
+<div ng-include="'template/footer.html'"></div>
+
